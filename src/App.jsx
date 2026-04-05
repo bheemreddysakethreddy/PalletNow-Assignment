@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="mt-10">
       <BrowserRouter>
-      <Suspense fallback={<h1 className="text-5xl">Loading Page...</h1>}>
+      <Suspense fallback={<h1 className="text-5xl">Loading ...</h1>}>
         <Routes>
           <Route path="/product" element={<DataGridPage />} />
           <Route path="/product/:id" element={<ProductScreen />} />

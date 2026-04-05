@@ -10,7 +10,7 @@ function ProductScreen() {
   return (
     <div className='flex items-center flex-col p-4'>
       <div className="w-full max-w-5xl">
-        <button onClick={()=>navigate("/product")} className='m-4 border rounded px-4 py-1 cursor-pointer'>
+        <button onClick={()=>navigate("/product")} className=' mb-4 border rounded px-4 py-1 cursor-pointer'>
           Back
         </button>
       </div>
