@@ -1,17 +1,24 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import ProductScreen from "./pages/ProductScreen";
-import DataGridPage from "./components/DataGrid";
+import { lazy, Suspense } from "react";
+// import ProductScreen from "./pages/ProductScreen";
+// import DataGridPage from "./components/DataGrid";
+const DataGridPage = lazy(()=>import("./components/DataGrid"))
+const ProductScreen = lazy(()=>import("./pages/ProductScreen"))
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/product" element={<DataGridPage />} />
-        <Route path="/product/:id" element={<ProductScreen />} />
-        <Route path="*"  element={<Navigate to="/product"/>}/>
-      </Routes>
-    </BrowserRouter>
+    <div className="mt-10">
+      <BrowserRouter>
+      <Suspense fallback={<h1 className="text-5xl">Loading Page...</h1>}>
+        <Routes>
+          <Route path="/product" element={<DataGridPage />} />
+          <Route path="/product/:id" element={<ProductScreen />} />
+          <Route path="*"  element={<Navigate to="/product"/>}/>
+        </Routes>
+      </Suspense>
+      </BrowserRouter>
+    </div>
   );
 }
 
