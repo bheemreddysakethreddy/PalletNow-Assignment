@@ -12,9 +12,9 @@ function App() {
       <BrowserRouter>
       <Suspense fallback={<h1 className="text-5xl">Loading ...</h1>}>
         <Routes>
-          <Route path="/product" element={<DataGridPage />} />
+          <Route path="/" element={<DataGridPage />} />
           <Route path="/product/:id" element={<ProductScreen />} />
-          <Route path="*"  element={<Navigate to="/product"/>}/>
+          <Route path="*"  element={<Navigate to="/"/>}/>
         </Routes>
       </Suspense>
       </BrowserRouter>
